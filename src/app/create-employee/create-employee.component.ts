@@ -17,7 +17,8 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   onSubmit() {
-    this.employeeService.createEmployee(this.employee).subscribe(data =>{this.employee=data;this.router.navigate(['employees']);});
+    this.employeeService.createEmployee(this.employee).subscribe(data =>{this.employee=data;this.router.navigate(['employees']);},
+      error=>console.log(error));
 
 
   }
