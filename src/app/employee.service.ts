@@ -10,7 +10,7 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  private employeesUrl = "http://localhost:8080/api/basseydou/employees/"
+  private employeesUrl = "http://localhost:8080/api/basseydou/employees"
 
   /*Get employees from the server*/
   getEmployeesList():Observable<Employee[]>{
@@ -21,4 +21,16 @@ export class EmployeeService {
   createEmployee(newEmployee:Employee):Observable<Employee>{
     return this.http.post<Employee>(`${this.employeesUrl}`,newEmployee);
   }
+
+  /*Get employee by id*/
+  getEmployeeById(employeeId:number):Observable<Employee>{
+    return this.http.get<Employee>(`${this.employeesUrl}/${employeeId}`);
+
+  }
+
+  /*Update employee*/
+  updateEmployee(employeeId:number,newEmployee:Employee):Observable<Employee>{
+    return this.http.put<Employee>(`${this.employeesUrl}/${employeeId}`,newEmployee);
+  }
+
 }

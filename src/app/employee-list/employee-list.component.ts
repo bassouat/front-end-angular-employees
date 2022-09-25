@@ -26,12 +26,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
   private getEmployeeList():void {
-    this.employeeService.getEmployeesList().subscribe(data =>{this.employees=data;},error=>console.log(error));
+    this.employeeService.getEmployeesList().subscribe(data =>this.employees=data);
 
   }
 
 
-  updateEmployee(id: number) {
+  update(id: number) {
     this.router.navigate(["update-employee",id])
 
 
