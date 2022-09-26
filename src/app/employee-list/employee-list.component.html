@@ -7,6 +7,7 @@
     <th>Last name</th>
     <th>Email id</th>
     <th>Actions</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -16,6 +17,9 @@
     <td>{{employee.emailId}}</td>
     <td><button (click)="update(employee.id)" class="btn btn-info">
       Update
+    </button>
+    <button (click)="delete(employee.id)" class="btn btn-danger" style="margin-left: 10px">
+      Delete
     </button></td>
   </tr>
   </tbody>

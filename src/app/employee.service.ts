@@ -32,5 +32,8 @@ export class EmployeeService {
   updateEmployee(employeeId:number,newEmployee:Employee):Observable<Employee>{
     return this.http.put<Employee>(`${this.employeesUrl}/${employeeId}`,newEmployee);
   }
-
+  /*Delete an employee*/
+  deleteEmployee(employeeId:number):Observable<Employee>{
+    return this.http.delete<Employee>(`${this.employeesUrl}/${employeeId}`);
+  }
 }
